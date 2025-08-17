@@ -2,7 +2,7 @@
   "name": "noir-next",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yourusername.github.io/canvas-coder-website",
+  "homepage": "https://Swarnadeep23.github.io/canvas-coder-website",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
