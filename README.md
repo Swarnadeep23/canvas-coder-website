@@ -22,7 +22,7 @@ A modern, minimalist website built with Next.js and the NOIR Design System. Clea
 - **3D Graphics**: Three.js
 - **Email Service**: EmailJS
 - **Database**: Supabase (PostgreSQL)
-- **Deployment**: Netlify
+- **Hosting**: GitHub Pages
 
 ## 🎯 Pages
 
@@ -55,12 +55,12 @@ npm run build
 
 ## 🌐 Deployment
 
-### Netlify (Recommended)
-1. Push code to GitHub
-2. Connect Netlify to your GitHub repository
+### GitHub Pages
+1. Push code to GitHub repository
+2. Enable GitHub Pages in repository settings
 3. Build command: `npm run build`
 4. Publish directory: `out`
-5. Deploy automatically on every push
+5. Deploy automatically on every push to main branch
 
 ### Environment Variables
 Create `.env.local` with:
@@ -115,7 +115,7 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 📞 Contact
 
 - **Email**: swarnadeepmaity67@gmail.com
-- **Website**: [CANVAS CODER](https://your-domain.com)
+- **Website**: [CANVAS CODER](https://yourusername.github.io/canvas-coder-website)
 
 ---
 
