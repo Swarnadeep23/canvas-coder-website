@@ -1,149 +1,122 @@
-# NOIR Design System Landing Page
+# 🎨 CANVAS CODER - Professional Web Development
 
-A minimalist, modern landing page built with Next.js, featuring a custom Three.js ShapeBlur effect and Supabase database integration.
+A modern, minimalist website built with Next.js and the NOIR Design System. Clean, professional web experiences with a focus on typography and negative space.
 
-## Features
+## ✨ Features
 
-- **6 Custom Sections**: Navigation, Hero, Logo Grid, Services, About, Contact
-- **Three.js ShapeBlur**: Interactive background effect in hero section
-- **Supabase Database**: Contact form submissions stored in PostgreSQL
-- **NOIR Design System**: Minimalist-dark theme with high contrast
-- **Fully Responsive**: Mobile-first design approach
-- **TypeScript**: Full type safety throughout the application
+- **Modern Design System** - NOIR-inspired minimalist-dark theme
+- **Interactive 3D Background** - Three.js ShapeBlur component
+- **Text Typing Animation** - Dynamic hero text effects
+- **Contact Form Integration** - EmailJS-powered contact system
+- **Responsive Design** - Mobile-first approach
+- **Shiny Navigation** - Glowing text effects
+- **MagicBento Cards** - Glassmorphism UI components
+- **Interactive Profile Card** - 3D tilt effects and animations
 
-## Tech Stack
+## 🚀 Tech Stack
 
-- **Next.js 15** with App Router
-- **TypeScript** for type safety
-- **Three.js** for WebGL effects
-- **Supabase** for database and authentication
-- **CSS Modules** for styling
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS + CSS Modules
+- **UI Components**: shadcn/ui
+- **3D Graphics**: Three.js
+- **Email Service**: EmailJS
+- **Database**: Supabase (PostgreSQL)
+- **Deployment**: Netlify
 
-## Getting Started
+## 🎯 Pages
+
+- **Home** - Landing page with hero, services, and contact sections
+- **Services** - Detailed service offerings
+- **About** - Company mission and values
+- **Contact** - Contact form with interactive profile card
+
+## 🛠️ Getting Started
 
 ### Prerequisites
-
 - Node.js 18+ 
 - npm or yarn
-- Supabase account
 
 ### Installation
-
-1. **Clone and install dependencies:**
-   ```bash
-   cd noir-next
-   npm install
-   ```
-
-2. **Set up Supabase:**
-   - Create a new Supabase project
-   - Get your project URL and anon key
-   - Create a table called `contact_submissions` with columns:
-     - `id` (uuid, primary key)
-     - `name` (text)
-     - `email` (text)
-     - `message` (text)
-     - `created_at` (timestamp with timezone)
-
-3. **Configure environment variables:**
-   Create `.env.local` in the root directory:
-   ```env
-   NEXT_PUBLIC_SUPABASE_URL=https://nwlkmtsuiipznpxjcbjh.supabase.co
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
-   SUPABASE_SERVICE_ROLE_KEY=your-service-role-key-here
-   ```
-
-4. **Update Supabase configuration:**
-   Edit `src/lib/supabase.ts` and replace `your-anon-key-here` with your actual anon key.
-
-### Database Setup
-
-Run this SQL in your Supabase SQL editor:
-
-```sql
--- Create contact_submissions table
-CREATE TABLE contact_submissions (
-  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  name TEXT NOT NULL,
-  email TEXT NOT NULL,
-  message TEXT NOT NULL,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
--- Enable Row Level Security (optional)
-ALTER TABLE contact_submissions ENABLE ROW LEVEL SECURITY;
-
--- Create policy to allow inserts (adjust as needed)
-CREATE POLICY "Allow inserts" ON contact_submissions
-  FOR INSERT WITH CHECK (true);
-```
-
-### Development
-
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/canvas-coder-website.git
+cd canvas-coder-website
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-```
 
-Visit [http://localhost:3000](http://localhost:3000) to see your site.
-
-### Build for Production
-
-```bash
+# Build for production
 npm run build
-npm start
 ```
 
-## Project Structure
+## 🌐 Deployment
 
-```
-noir-next/
-├── src/
-│   ├── app/
-│   │   ├── components/
-│   │   │   ├── ShapeBlur.tsx      # Three.js WebGL effect
-│   │   │   └── ContactForm.tsx    # Database-connected form
-│   │   ├── api/
-│   │   │   └── contact/
-│   │   │       └── route.ts       # API endpoint for form
-│   │   ├── page.tsx               # Main landing page
-│   │   ├── layout.tsx             # Root layout
-│   │   ├── globals.css            # Global styles
-│   │   └── page.module.css        # Component styles
-│   └── lib/
-│       └── supabase.ts            # Database configuration
-├── public/                        # Static assets
-└── package.json
+### Netlify (Recommended)
+1. Push code to GitHub
+2. Connect Netlify to your GitHub repository
+3. Build command: `npm run build`
+4. Publish directory: `out`
+5. Deploy automatically on every push
+
+### Environment Variables
+Create `.env.local` with:
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
 
-## Customization
+## 🎨 Design System
 
-### ShapeBlur Effect
-- Modify `variation` prop (0-3) for different shapes
-- Adjust `shapeSize`, `roundness`, `borderSize` for styling
-- Change opacity in CSS for visibility
+### Color Palette
+- **Primary**: #000000 (Background), #1a1a1a (Surface)
+- **Text**: #ffffff (White), #888888 (Muted)
+- **Accent**: #ff4500 (Orange), #ff6633 (Hover)
+
+### Typography
+- **Hero**: System fonts with responsive sizing
+- **Hierarchy**: Clear visual hierarchy through spacing
+- **Principles**: Minimalism, contrast, consistency
+
+## 📱 Responsive Design
+
+- **Mobile-first** approach
+- **Breakpoints**: 768px, 1024px, 1200px
+- **Grid system**: 12-column responsive layout
+- **Touch-friendly** interactions
+
+## 🔧 Customization
+
+### Components
+- `ShapeBlur` - Interactive 3D background
+- `TextType` - Typing animation component
+- `ProfileCard` - Interactive profile display
+- `ContactForm` - Email integration
 
 ### Styling
-- All styles are in `src/app/page.module.css`
-- Follows NOIR Design System color palette
-- Responsive breakpoints included
+- CSS Modules for component-specific styles
+- Tailwind CSS for utility classes
+- Custom CSS variables for theming
 
-### Database
-- Contact form submissions go to `contact_submissions` table
-- API route handles server-side validation
-- Success/error messages included
+## 📄 License
 
-## Environment Variables
+This project is open source and available under the [MIT License](LICENSE).
 
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `NEXT_PUBLIC_SUPABASE_URL` | Your Supabase project URL | Yes |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Public anon key | Yes |
-| `SUPABASE_SERVICE_ROLE_KEY` | Service role key (server-side) | Yes |
+## 🤝 Contributing
 
-## License
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
 
-MIT License - feel free to use this project for your own purposes.
+## 📞 Contact
 
-## Support
+- **Email**: swarnadeepmaity67@gmail.com
+- **Website**: [CANVAS CODER](https://your-domain.com)
 
-For issues or questions, check the Next.js and Supabase documentation, or create an issue in this repository.
+---
+
+**Built with ❤️ using Next.js and the NOIR Design System**
