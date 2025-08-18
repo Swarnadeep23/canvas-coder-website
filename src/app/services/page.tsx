@@ -122,7 +122,7 @@ export default function ServicesPage() {
       <section className={styles.contactSection}>
         <h2>Ready to Get Started?</h2>
         <p className="text-[#ccc] mb-6">
-          Let's discuss how we can help bring your vision to life.
+          Let&apos;s discuss how we can help bring your vision to life.
         </p>
         <Button asChild className="bg-[#ff4500] hover:bg-[#ff6633] text-white border-none transition-all duration-300 hover:translate-y-[-2px]">
           <Link href="/contact">Get in Touch</Link>

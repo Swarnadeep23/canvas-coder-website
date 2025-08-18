@@ -42,8 +42,8 @@ export default function Home() {
               className="text-6xl md:text-8xl font-bold leading-tight text-white"
             />
           </h1>
-          <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto">
-            We craft digital experiences that speak volumes through simplicity and elegance.
+          <p className="text-xl text-gray-400 mb-8 max-w-2xl">
+            Clean, professional web experiences with a focus on typography and negative space.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold">

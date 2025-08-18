@@ -181,7 +181,7 @@ const ShapeBlur = ({
     const quad = new THREE.Mesh(geo, material);
     scene.add(quad);
 
-    const onPointerMove = (e: PointerEvent) => {
+    const onPointerMove = (e: MouseEvent | PointerEvent) => {
       const rect = mount.getBoundingClientRect();
       vMouse.set(e.clientX - rect.left, e.clientY - rect.top);
     };
@@ -222,9 +222,8 @@ const ShapeBlur = ({
       const dt = time - lastTime;
       lastTime = time;
 
-      ['x', 'y'].forEach(k => {
-        vMouseDamp[k] = THREE.MathUtils.damp(vMouseDamp[k], vMouse[k], 8, dt);
-      });
+      vMouseDamp.x = THREE.MathUtils.damp(vMouseDamp.x, vMouse.x, 8, dt);
+      vMouseDamp.y = THREE.MathUtils.damp(vMouseDamp.y, vMouse.y, 8, dt);
 
       renderer.render(scene, camera);
       animationFrameId = requestAnimationFrame(update);
@@ -237,7 +236,7 @@ const ShapeBlur = ({
       if (ro) ro.disconnect();
       document.removeEventListener('mousemove', onPointerMove);
       document.removeEventListener('pointermove', onPointerMove);
-      if (mount && renderer.domElement.parentNode) {
+      if (mount && renderer.domElement) {
         mount.removeChild(renderer.domElement);
       }
       renderer.dispose();
@@ -252,7 +251,13 @@ const ShapeBlur = ({
     circleEdge
   ]);
 
-  return <div className={className} ref={mountRef} style={{ width: '100%', height: '100%' }} />;
+  return (
+    <div 
+      className={className} 
+      ref={mountRef} 
+      style={{ width: '100%', height: '100%' }} 
+    />
+  );
 };
 
 export default ShapeBlur; 

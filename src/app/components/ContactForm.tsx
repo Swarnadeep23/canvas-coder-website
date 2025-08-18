@@ -50,7 +50,7 @@ export default function ContactForm() {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
@@ -95,11 +95,11 @@ export default function ContactForm() {
         } else {
           throw new Error('EmailJS failed');
         }
-      } catch (emailjsError) {
+      } catch (emailjsError: unknown) {
         console.error('EmailJS error:', emailjsError);
         setSubmitStatus('error');
       }
-    } catch (error) {
+    } catch (error: unknown) {
       console.error('Unexpected error:', error);
       setSubmitStatus('error');
     } finally {
@@ -157,7 +157,7 @@ export default function ContactForm() {
 
       {submitStatus === 'success' && (
         <div className="text-green-400 text-center p-3 bg-green-900/20 border border-green-500/30 rounded">
-          Message sent successfully! We'll get back to you soon.
+          Message sent successfully! We&apos;ll get back to you soon.
         </div>
       )}
 
@@ -191,7 +191,11 @@ declare global {
   interface Window {
     emailjs: {
       init: (publicKey: string) => void;
-      send: (serviceId: string, templateId: string, templateParams: any) => Promise<any>;
+      send: (
+        serviceId: string,
+        templateId: string,
+        templateParams: Record<string, string>
+      ) => Promise<{ status: number; text?: string }>;
     };
   }
 } 

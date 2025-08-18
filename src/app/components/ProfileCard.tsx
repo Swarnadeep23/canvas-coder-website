@@ -161,9 +161,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
     (event: PointerEvent) => {
       const card = cardRef.current;
       const wrap = wrapRef.current;
-
       if (!card || !wrap || !animationHandlers) return;
-
       const rect = card.getBoundingClientRect();
       animationHandlers.updateCardTransform(
         event.clientX - rect.left,
@@ -178,9 +176,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   const handlePointerEnter = useCallback(() => {
     const card = cardRef.current;
     const wrap = wrapRef.current;
-
     if (!card || !wrap || !animationHandlers) return;
-
     animationHandlers.cancelAnimation();
     wrap.classList.add("active");
     card.classList.add("active");
@@ -190,9 +186,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
     (event: PointerEvent) => {
       const card = cardRef.current;
       const wrap = wrapRef.current;
-
       if (!card || !wrap || !animationHandlers) return;
-
       animationHandlers.createSmoothAnimation(
         ANIMATION_CONFIG.SMOOTH_DURATION,
         event.offsetX,
@@ -210,12 +204,9 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
     (event: DeviceOrientationEvent) => {
       const card = cardRef.current;
       const wrap = wrapRef.current;
-
       if (!card || !wrap || !animationHandlers) return;
-
       const { beta, gamma } = event;
       if (!beta || !gamma) return;
-
       animationHandlers.updateCardTransform(
         card.clientHeight / 2 + gamma * mobileTiltSensitivity,
         card.clientWidth / 2 + (beta - ANIMATION_CONFIG.DEVICE_BETA_OFFSET) * mobileTiltSensitivity,
@@ -241,15 +232,16 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
 
     const handleClick = () => {
       if (!enableMobileTilt || location.protocol !== 'https:') return;
-      if (typeof (window as any).DeviceMotionEvent?.requestPermission === 'function') {
-        (window as any).DeviceMotionEvent
-          .requestPermission()
+      const DeviceMotion = (window as Window & typeof globalThis)
+        .DeviceMotionEvent as { requestPermission?: () => Promise<string> } | undefined;
+      if (DeviceMotion && typeof DeviceMotion.requestPermission === 'function') {
+        DeviceMotion.requestPermission()
           .then((state: string) => {
             if (state === 'granted') {
               window.addEventListener('deviceorientation', deviceOrientationHandler);
             }
           })
-          .catch((err: any) => console.error(err));
+          .catch((err) => console.error(err));
       } else {
         window.addEventListener('deviceorientation', deviceOrientationHandler);
       }

@@ -38,7 +38,7 @@ export default function About() {
             />
           </h1>
           <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-            We are passionate about creating digital experiences that inspire and engage.
+            We&apos;re passionate about creating digital experiences that not only look stunning but also deliver exceptional functionality and user engagement.
           </p>
         </div>
       </section>
@@ -65,7 +65,7 @@ export default function About() {
               <h3 className={styles.cardTitle}>Purpose-Driven Design</h3>
             </div>
             <div className={styles.cardContent}>
-              <p>Every element we create has a specific purpose. No decoration for decoration's sake - only meaningful, functional design that serves your users and your brand.</p>
+              <p>Every element we create has a specific purpose. No decoration for decoration&apos;s sake - only meaningful, functional design that serves your users and your brand.</p>
             </div>
           </div>
           
@@ -75,7 +75,7 @@ export default function About() {
               <h3 className={styles.cardTitle}>Performance First</h3>
             </div>
             <div className={styles.cardContent}>
-              <p>We build fast, efficient, and scalable solutions. Performance isn't an afterthought - it's built into every decision we make from the ground up.</p>
+              <p>We build fast, efficient, and scalable solutions. Performance isn&apos;t an afterthought - it&apos;s built into every decision we make from the ground up.</p>
             </div>
           </div>
           
@@ -143,7 +143,7 @@ export default function About() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Work Together?</h2>
           <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-            Let's discuss how we can bring your digital vision to life with creativity, precision, and purpose.
+            Let&apos;s discuss how we can bring your digital vision to life with creativity, precision, and purpose.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold">

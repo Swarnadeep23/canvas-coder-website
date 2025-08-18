@@ -42,7 +42,7 @@ export default function Contact() {
             />
           </h1>
           <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-            Ready to bring your digital vision to life? We'd love to hear from you.
+            Ready to bring your digital vision to life? We&apos;d love to hear from you.
           </p>
         </div>
       </section>
@@ -56,7 +56,7 @@ export default function Contact() {
               <div className="text-4xl mb-4">📧</div>
               <h3 className="text-xl font-semibold mb-3 text-white">Email</h3>
               <p className="text-gray-400">swarnadeepmaity67@gmail.com</p>
-              <p className="text-sm text-gray-500 mt-2">We'll respond within 24 hours</p>
+              <p className="text-sm text-gray-500 mt-2">We&apos;ll respond within 24 hours</p>
             </div>
             <div className="text-center">
               <div className="text-4xl mb-4">🌐</div>
@@ -79,7 +79,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-white">Send Us a Message</h2>
           <p className="text-lg text-gray-400 mb-12 text-center max-w-2xl mx-auto">
-            Fill out the form below and we'll get back to you as soon as possible. 
+            Fill out the form below and we&apos;ll get back to you as soon as possible. 
             Tell us about your project, goals, and timeline.
           </p>
           
@@ -116,10 +116,10 @@ export default function Contact() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className={styles.magicBentoCard}>
               <div className={styles.cardHeader}>
-                <h3 className={styles.cardTitle}>What's your typical project timeline?</h3>
+                <h3 className={styles.cardTitle}>What&apos;s your typical project timeline?</h3>
               </div>
               <div className={styles.cardContent}>
-                <p>Project timelines vary based on scope and complexity. A typical website project takes 4-8 weeks, while design systems can take 6-12 weeks. We'll provide a detailed timeline during our initial consultation.</p>
+                <p>Project timelines vary based on scope and complexity. A typical website project takes 4-8 weeks, while design systems can take 6-12 weeks. We&apos;ll provide a detailed timeline during our initial consultation.</p>
               </div>
             </div>
             
@@ -158,7 +158,7 @@ export default function Contact() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Start Your Project?</h2>
           <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-            Let's discuss how we can help you achieve your digital goals with creativity and technical excellence.
+            Let&apos;s discuss how we can help you achieve your digital goals with creativity and technical excellence.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold">
