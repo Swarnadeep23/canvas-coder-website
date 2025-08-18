@@ -125,7 +125,7 @@ export default function About() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
             <div className="text-center">
-              <div className="w-24 h-24 bg-gradient-to-br from-orange-500 to-red-600 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold">SC</div>
+              <div className="w-24 h-24 bg-gradient-to-br from-orange-500 to-red-600 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold">SM</div>
               <h3 className="text-xl font-semibold text-white">Swarnadeep Maity</h3>
               <p className="text-gray-400">Founder & Lead Developer</p>
             </div>
