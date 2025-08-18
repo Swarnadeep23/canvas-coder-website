@@ -5,6 +5,7 @@ import TextType from './components/TextType';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
+import { withPrefix } from "@/lib/assetPrefix";
 
 export default function Home() {
   return (
@@ -59,11 +60,11 @@ export default function Home() {
       {/* 3. Logo Grid Section */}
       <section className={styles.logoGridSection}>
         <div className={styles.logoGrid}>
-          <img src="/vercel.svg" alt="Logo 1" />
-          <img src="/next.svg" alt="Logo 2" />
-          <img src="/globe.svg" alt="Logo 3" />
-          <img src="/file.svg" alt="Logo 4" />
-          <img src="/window.svg" alt="Logo 5" />
+          <img src={withPrefix('/vercel.svg')} alt="Logo 1" />
+          <img src={withPrefix('/next.svg')} alt="Logo 2" />
+          <img src={withPrefix('/globe.svg')} alt="Logo 3" />
+          <img src={withPrefix('/file.svg')} alt="Logo 4" />
+          <img src={withPrefix('/window.svg')} alt="Logo 5" />
         </div>
       </section>
 

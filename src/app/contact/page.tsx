@@ -7,6 +7,7 @@ import TextType from '../components/TextType';
 import ContactForm from '../components/ContactForm';
 import ProfileCard from '../components/ProfileCard';
 import styles from '../page.module.css';
+import { withPrefix } from '@/lib/assetPrefix';
 
 export default function Contact() {
   return (
@@ -92,7 +93,7 @@ export default function Contact() {
             {/* Profile Card */}
             <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
               <ProfileCard
-                avatarUrl="/profile-photo.jpg"
+                avatarUrl={withPrefix('/profile-photo.jpg')}
                 name="Swarnadeep Maity"
                 title="Founder & Lead Developer"
                 handle="canvas-coder"
